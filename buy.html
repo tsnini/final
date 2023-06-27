@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purchase Details</title>
+    <link rel="stylesheet" href="./src/buy.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Store</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categories
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="filtered.html?category=electronics"
+                    >Electronics</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="filtered.html?category=women's clothing"
+                    >Women's clothing</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="filtered.html?category=men's clothing"
+                    >Men's clothing</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="filtered.html?category=jewelery"
+                    >Jewelery</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="registration.html">registration</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Log In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1>Purchase Details</h1>
+    <div class="purchase-details">
+      <h2 id="item-title"></h2>
+      <p id="item-price"></p>
+    </div>
+
+    <h2>Credit Card Information</h2>
+    <form id="credit-card-form" class="credit-card-form">
+      <div>
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" required />
+      </div>
+      <div>
+        <label for="card-holder">Card Holder Name:</label>
+        <input type="text" id="card-holder" required />
+      </div>
+      <div>
+        <label for="expiration-date">Expiration Date:</label>
+        <input type="text" id="expiration-date" required />
+      </div>
+      <div>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" required />
+      </div>
+      <button type="submit">BUY</button>
+    </form>
+
+    <p id="success-message" class="success-message"></p>
+
+    <script src="buy.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

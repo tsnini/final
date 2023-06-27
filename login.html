@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Sign In</title>
+    <link rel="stylesheet" href="./src/registration.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>User Sign In</h1>
+
+      <div class="form-group">
+        <label for="Email">Email:</label>
+        <input type="email" id="Email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" required />
+      </div>
+
+      <button id="SignInButton">Sign In</button>
+
+      <p>Don't have an account? <a href="registration.html">Register</a></p>
+
+      <div id="notification" style="display: none"></div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCtvpasjQPqrQb74G8fqdPL0LPUFZeHqsM",
+        authDomain: "shop-32e23.firebaseapp.com",
+        databaseURL: "https://shop-32e23-default-rtdb.firebaseio.com",
+        projectId: "shop-32e23",
+        storageBucket: "shop-32e23.appspot.com",
+        messagingSenderId: "254500408452",
+        appId: "1:254500408452:web:e6dc0610fb50ee2336c6d1",
+        measurementId: "G-2GFRD44VVN",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth = getAuth();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const SignInButton = document.getElementById("SignInButton");
+        const Email = document.getElementById("Email");
+        const Password = document.getElementById("Password");
+        const notification = document.getElementById("notification");
+
+        SignInButton.addEventListener("click", () => {
+          const email = Email.value;
+          const password = Password.value;
+
+          if (email === "" || !email.includes("@")) {
+            Email.setCustomValidity("Enter a valid email");
+          } else if (password === "") {
+            Password.setCustomValidity("Enter a password");
+          } else {
+            signInWithEmailAndPassword(auth, email, password)
+              .then(() => {
+                window.location.href = "profile.html";
+              })
+              .catch((error) => {
+                notification.textContent = "Invalid email or password";
+                notification.style.display = "block";
+                console.log("Sign In Error:", error.message);
+              });
+          }
+        });
+
+        auth.onAuthStateChanged((user) => {
+          if (user && window.location.pathname !== "/profile.html") {
+            window.location.href = "profile.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

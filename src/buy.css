@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.purchase-details {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.purchase-details h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.purchase-details p {
+  font-size: 18px;
+}
+
+/* Credit card form styles */
+.credit-card-form {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.credit-card-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.credit-card-form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.credit-card-form button {
+  background-color: #f0c14b;
+  color: #111;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.credit-card-form button:hover {
+  background-color: #f7ca61;
+}
+
+.success-message {
+  color: #008000;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
